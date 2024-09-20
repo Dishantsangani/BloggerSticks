@@ -26,9 +26,9 @@ function Finance() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(
-        // "https://finnhub.io/api/v1/news?category=general&token=crhe2j1r01qjv9rkl3e0crhe2j1r01qjv9rkl3eg"
-      )
+      .get
+      // "https://finnhub.io/api/v1/news?category=general&token=crhe2j1r01qjv9rkl3e0crhe2j1r01qjv9rkl3eg"
+      ()
       .then((res) => {
         setFdata(res.data);
         setTotalPosts(res.data.length);

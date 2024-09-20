@@ -1,60 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Asidebar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <>
-      <div>
-        {/* Mobile Toggle Button */}
-        <button
-          onClick={toggleSidebar}
-          className="fixed top-4 left-4 z-50 p-2 text-gray-600 dark:text-gray-300"
-        >
-          {isOpen ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6 ml-28"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          )}
-        </button>
-
-        <aside
-          className={`fixed top-0 left-0 w-48 z-40 px-5 py-4 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700 transform transition-transform duration-300 ${
-            isOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
-        >
-          <img src="logo.png" alt="" className="w-72 mt-8" />
+      <div className="flex">
+        <aside className="fixed top-0 left-0 w-48  px-5 py-4 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+          <img src="logo.png" alt="" className="w-72" />
           <div className="flex flex-col justify-between flex-1 mt-6">
             <hr />
             <nav className="-mx-3 space-y-3">
@@ -187,7 +139,7 @@ function Asidebar() {
                 <span className="mx-2 text-sm font-medium">User</span>
               </Link>
             </nav>
-            <div className="flex items-center justify-between mt-36">
+            <div className="flex items-center justify-between mt-48">
               <a href="#" className="flex items-center gap-x-2">
                 <img
                   className="object-cover rounded-full h-7 w-7"
