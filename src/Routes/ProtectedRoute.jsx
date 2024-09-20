@@ -6,6 +6,9 @@ import Finance from "../Page/Finance";
 import Trading from "../Page/Trading";
 import Space from "../Page/Space";
 import Asidebar from "../Component/Asidebar";
+import Footer from "../Component/Footer";
+
+import { Toaster } from "react-hot-toast";
 function ProtectedRoute() {
   const is_Logged = localStorage.getItem("Token");
   const navigate = useNavigate();
@@ -18,6 +21,7 @@ function ProtectedRoute() {
   return (
     <>
       <Asidebar />
+      <Toaster />
       {is_Logged && (
         <Routes>
           <Route path="/home" element={<Home />} />
@@ -27,6 +31,7 @@ function ProtectedRoute() {
           <Route path="/space" element={<Space />} />
         </Routes>
       )}
+      <Footer />
     </>
   );
 }

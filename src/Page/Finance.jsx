@@ -26,9 +26,9 @@ function Finance() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get
-      // "https://finnhub.io/api/v1/news?category=general&token=crhe2j1r01qjv9rkl3e0crhe2j1r01qjv9rkl3eg"
-      ()
+      .get(
+        "https://finnhub.io/api/v1/news?category=general&token=crhe2j1r01qjv9rkl3e0crhe2j1r01qjv9rkl3eg"
+      )
       .then((res) => {
         setFdata(res.data);
         setTotalPosts(res.data.length);
@@ -55,7 +55,7 @@ function Finance() {
         {/* Header */}
         <section className="bg-white dark:bg-gray-900">
           <motion.div
-            className="container flex flex-col items-center px-4 mx-auto text-center"
+            className="container flex flex-col items-center mt-7 px-4 mx-auto text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -129,35 +129,35 @@ function Finance() {
                 variants={fadeIn}
               >
                 <div>
-                  <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 dark:text-gray-400 ">
+                  <p className="block mt-2 font-medium text-gray-700  hover:text-gray-500 dark:text-gray-400 ">
                     Osel Devices IPO: Day 1 : Check for Subscription status,
                     GMP, key dates
                   </p>
                 </div>
                 <hr className="my-6 border-gray-200 dark:border-gray-700" />
                 <div>
-                  <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 dark:text-gray-400 ">
+                  <p className="block mt-2 font-medium text-gray-700  hover:text-gray-500 dark:text-gray-400 ">
                     Pelatro IPO booked 0.43 times on Day 1, retail portion
                     subscribed 0.79 times
                   </p>
                 </div>
                 <hr className="my-6 border-gray-200 dark:border-gray-700" />
                 <div>
-                  <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 dark:text-gray-400 ">
+                  <p className="block mt-2 font-medium text-gray-700  hover:text-gray-500 dark:text-gray-400 ">
                     Excellent Wires IPO: Latest GMP, steps to check allotment
                     status online
                   </p>
                 </div>
                 <hr className="my-6 border-gray-200 dark:border-gray-700" />
                 <div>
-                  <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 dark:text-gray-400 ">
+                  <p className="block mt-2 font-medium text-gray-700  hover:text-gray-500 dark:text-gray-400 ">
                     ICICI Bank, HCL Tech...nearly 400 stocks hit 1-year highs;
                     check details
                   </p>
                 </div>
                 <hr className="my-6 border-gray-200 dark:border-gray-700" />
                 <div>
-                  <p className="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 dark:text-gray-400 ">
+                  <p className="block mt-2 font-medium text-gray-700  hover:text-gray-500 dark:text-gray-400 ">
                     Small-cap SME stock hits upper circuit. Rises 650% in
                     six-month post-listing
                   </p>
@@ -226,14 +226,14 @@ function Finance() {
                       </p>
                       <div className="flex justify-between items-center">
                         <div className="flex items-center space-x-4">
-                          <span className="font-medium dark:text-white">
+                          <span className="font-medium text-blue-500">
                             {item.source}
                           </span>
                         </div>
                         <a
+                          className="inline-flex items-center font-medium text-blue-500 dark:text-primary-500 hover:underline"
                           href={item.url}
                           target="_blank"
-                          className="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
                         >
                           Read more
                           <svg

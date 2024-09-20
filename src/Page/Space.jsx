@@ -42,7 +42,9 @@ function Space() {
           >
             <div className="max-w-lg mx-auto">
               <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
-                Explore the universe of space news and trading insights.
+                Explore the{" "}
+                <span className="text-blue-500"> universe of space</span> news
+                and trading insights.
               </h1>
               <p className="mt-6 text-gray-500 dark:text-gray-300">
                 Dive into engaging articles that cover the latest developments
@@ -116,7 +118,7 @@ function Space() {
         {/* Section2 */}
         <section className="py-14">
           <h1 className="mb-12 text-center font-sans text-5xl font-bold">
-            Our Blog
+            Our <span className="text-blue-500">Blog</span>
           </h1>
           {loading ? (
             <div className="flex justify-center items-center">

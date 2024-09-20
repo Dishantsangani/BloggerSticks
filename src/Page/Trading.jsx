@@ -10,13 +10,18 @@ const Trading = () => {
   };
 
   const chartContainerRef = useRef();
-  const [news, setNews] = useState([]);
   const priceRef = useRef(); // Reference for the price display element
+  const [tradingInfo, setTradingInfo] = useState({
+    currentPrice: 145.67,
+    volume: "2.5M",
+    marketNews: "IBM stocks surge by 2.5% in early trading.",
+    marketCap: "118.2B USD",
+  });
 
   useEffect(() => {
     // Set up chart properties
     const chart = createChart(chartContainerRef.current, {
-      width: 1100,
+      width: chartContainerRef.current.offsetWidth,
       height: 500,
       timeScale: {
         timeVisible: true,
@@ -55,9 +60,8 @@ const Trading = () => {
       .catch((err) => console.log(err));
 
     // Listen to crosshair movements and update the tooltip
-    // Button Hover
     chart.subscribeCrosshairMove((param) => {
-      if (param === undefined || !param.time || param.seriesData.size === 0) {
+      if (!param.time || !param.seriesData.size) {
         priceRef.current.style.display = "none";
       } else {
         const priceData = param.seriesData.get(candleSeries);
@@ -80,7 +84,7 @@ const Trading = () => {
 
   return (
     <>
-      {/*Heading*/}
+      {/* Heading */}
       <motion.div
         className="mx-auto mt-7 max-w-screen-sm text-center lg:mb-16 mb-8"
         initial="hidden"
@@ -89,7 +93,7 @@ const Trading = () => {
         variants={fadeIn}
       >
         <h2 className="mb-4 text-3xl lg:text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-          <span className="text-blue-500">Bloggerticks </span>
+          <span className="text-blue-500">Bloggerstricks </span>
           Your Ultimate Trading Platform
         </h2>
         <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
@@ -97,7 +101,7 @@ const Trading = () => {
           novice and experienced traders.
         </p>
       </motion.div>
-      {/*Heading*/}
+      {/* Heading */}
 
       {/* Trading View */}
       <motion.div
@@ -105,34 +109,45 @@ const Trading = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeIn}
+        className="flex flex-col items-center justify-center px-4 sm:px-6 lg:px-10 mx-auto mb-10"
       >
-        <div
-          ref={chartContainerRef}
-          style={{ position: "relative", width: "300px", height: "500px" }}
-        ></div>
+        {/* Chart & Info Container */}
+        <div className="w-full max-w-4xl bg-white drop-shadow-2xl p-6 rounded-lg shadow-lg text-center">
+          {/* Chart Container */}
+          <div
+            ref={chartContainerRef}
+            className="relative h-96 w-full mx-auto rounded-lg overflow-hidden mb-6"
+          >
+            <div
+              ref={priceRef}
+              className="absolute bg-white p-2 text-sm shadow-lg border rounded-md hidden"
+              style={{ pointerEvents: "none" }}
+            />
+          </div>
 
-        {/* Price tooltip */}
-        <div
-          ref={priceRef}
-          style={{
-            position: "absolute",
-            display: "none",
-            backgroundColor: "white",
-            border: "1px solid black",
-            padding: "10px",
-            pointerEvents: "none",
-            zIndex: 1000,
-          }}
-        ></div>
-
-        {/* Display news */}
-        <div style={{ marginTop: "20px" }} className="ml-">
-          <h2>Latest News</h2>
-          <ul></ul>
+          {/* Trading Information */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-red-500 p-4 rounded-lg drop-shadow-xl">
+              <h3 className="text-lg font-bold text-white">Current Price</h3>
+              <p className="text-sm text-white">
+                ${tradingInfo.currentPrice}
+              </p>
+            </div>
+            <div className="bg-green-500 p-4 rounded-lg drop-shadow-xl">
+              <h3 className="text-lg font-bold text-white">Volume</h3>
+              <p className="text-sm text-white">{tradingInfo.volume}</p>
+            </div>
+            <div className="bg-blue-500 p-4 rounded-lg drop-shadow-xl">
+              <h3 className="text-lg font-bold text-white">Market News</h3>
+              <p className="text-sm text-white">{tradingInfo.marketNews}</p>
+            </div>
+            <div className="bg-yellow-500 p-4 rounded-lg drop-shadow-xl">
+              <h3 className="text-lg font-bold text-white">Market Cap</h3>
+              <p className="text-sm text-white">{tradingInfo.marketCap}</p>
+            </div>
+          </div>
         </div>
       </motion.div>
-
-      {/* Trading View */}
     </>
   );
 };

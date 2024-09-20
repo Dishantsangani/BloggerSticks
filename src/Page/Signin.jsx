@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+// import toast, { Toaster } from 'react-hot-toast';
+import ToastSuccess from "../Component/Toast";
 function Signin() {
   const navigate = useNavigate();
   // FormdataState
@@ -47,9 +48,10 @@ function Signin() {
         email: formdata.email,
         password: formdata.password,
       });
-      debugger;
+
       const token = response.data.token;
       localStorage.setItem("Token", token);
+      ToastSuccess();
       navigate("/home");
     } catch (err) {
       console.log("This is A Api Error", err);
@@ -65,9 +67,13 @@ function Signin() {
 
   return (
     <>
-      <div className="w-full mt-8 drop-shadow-xl max-w-sm p-6 m-auto mx-auto bg-slate-200 rounded-lg shadow-md dark:bg-gray-800">
-        <div className="flex justify-center mx-auto">
-          <img className="w-auto h-10 sm:h-14" src="logo.png" alt="" />
+      <div className="w-full mt-20  drop-shadow-2xl max-w-md  sm:max-w-sm p-7 m-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div className="flex justify-center">
+          <img
+            className="w-auto h-10 sm:h-14"
+            src="logo.png"
+            alt="BloggerStricks Logo"
+          />
         </div>
         <form className="mt-4" onSubmit={handlesubmit}>
           <div>
@@ -119,14 +125,14 @@ function Signin() {
           </div>
         </form>
         <div className="flex items-center justify-between mt-4">
-          <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/5" />
+          <span className="w-1/5 border-b dark:border-gray-600" />
           <p
             href="#"
             className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
           >
             Welcome To BloggerStricks
           </p>
-          <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/5" />
+          <span className="w-1/5 border-b dark:border-gray-400" />
         </div>
       </div>
     </>

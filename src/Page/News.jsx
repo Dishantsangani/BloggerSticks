@@ -62,7 +62,7 @@ function News() {
   };
   return (
     <>
-      <div className="container">
+      <div className="container px-8 mt-5">
         {/* API Data */}
         <motion.section
           className="bg-white dark:bg-gray-900"
@@ -361,14 +361,14 @@ function News() {
         {/* Testimonal */}
         <section className="bg-white dark:bg-gray-900">
           <motion.div
-            className="max-w-6xl px-6 mx-auto"
+            className="max-w-6xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeIn}
           >
             <motion.main
-              className="relative z-20  mt-8 md:flex md:items-center xl:mt-12"
+              className="relative z-10 mt-8 md:flex md:items-center xl:mt-12"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
@@ -381,7 +381,7 @@ function News() {
                 viewport={{ once: true, amount: 0.3 }}
                 variants={fadeIn}
               />
-              <div className="w-full p-6 bg-blue-600 md:flex md:items-center rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
+              <div className="w-full p-6 bg-black md:flex md:items-center rounded-2xl md:bg-transparent md:p-0 lg:px-12 md:justify-evenly">
                 <motion.img
                   className="h-24 w-24 md:mx-6 rounded-full object-cover shadow-md md:h-[32rem] md:w-80 lg:h-[36rem] lg:w-[26rem] md:rounded-2xl"
                   src="sjai.png"
@@ -447,7 +447,7 @@ function News() {
         </div>
 
         {/* Article Part2 */}
-        <div className="px-4 py-6 ml-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-2">
+        <div className="py-8 mx-auto sm:max-w-xl  lg:max-w-screen-xl md:px-2 lg:px-8 lg:py-4">
           <motion.div
             className="mb-10 border-t border-b divide-y"
             initial="hidden"
@@ -457,32 +457,30 @@ function News() {
           >
             {/* Article 1 */}
             <motion.div
-              className="grid py-8 sm:grid-cols-4"
+              className="grid py-10 sm:grid-cols-3"
               variants={fadeInUp}
             >
               <div className="mb-4 sm:mb-0">
                 <div className="space-y-1 text-xs font-semibold tracking-wide uppercase">
-                  <a
-                    href="/"
+                  <p
                     className="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
                     aria-label="Category"
                   >
                     Aditya Sinha
-                  </a>
+                  </p>
                   <p className="text-gray-600">5 Jan 2020</p>
                 </div>
               </div>
               <div className="sm:col-span-3 lg:col-span-2">
                 <div className="mb-3">
-                  <a
-                    href="/"
+                  <p
                     aria-label="Article"
                     className="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
                   >
                     <p className="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl">
                       China clout in GenAI patents
                     </p>
-                  </a>
+                  </p>
                 </div>
                 <p className="text-gray-700">
                   By Aditya Sinha & Aasheerwad Dwivedi, In 1980, a small,
@@ -494,32 +492,30 @@ function News() {
 
             {/* Article 2 */}
             <motion.div
-              className="grid py-8 sm:grid-cols-4"
+              className="grid py-8 sm:grid-cols-3"
               variants={fadeInUp}
             >
               <div className="mb-4 sm:mb-0">
                 <div className="space-y-1 text-xs font-semibold tracking-wide uppercase">
-                  <a
-                    href="/"
+                  <p
                     className="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
                     aria-label="Category"
                   >
                     Arundhati Roy
-                  </a>
+                  </p>
                   <p className="text-gray-600">15 Sep 2020</p>
                 </div>
               </div>
               <div className="sm:col-span-3 lg:col-span-2">
                 <div className="mb-3">
-                  <a
-                    href="/"
+                  <p
                     aria-label="Article"
                     className="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
                   >
                     <p className="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl">
                       The Ministry of Utmost Happiness
                     </p>
-                  </a>
+                  </p>
                 </div>
                 <p className="text-gray-700">
                   The novel weaves together the stories of people navigating
@@ -531,32 +527,30 @@ function News() {
 
             {/* Article 3 */}
             <motion.div
-              className="grid py-8 sm:grid-cols-4"
+              className="grid py-8 sm:grid-cols-3"
               variants={fadeInUp}
             >
               <div className="mb-4 sm:mb-0">
                 <div className="space-y-1 text-xs font-semibold tracking-wide uppercase">
-                  <a
-                    href="/"
+                  <p
                     className="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
                     aria-label="Category"
                   >
                     Jhumpa Lahiri
-                  </a>
+                  </p>
                   <p className="text-gray-600">28 Dec 2020</p>
                 </div>
               </div>
               <div className="sm:col-span-3 lg:col-span-2">
                 <div className="mb-3">
-                  <a
-                    href="/"
+                  <p
                     aria-label="Article"
                     className="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
                   >
                     <p className="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl">
                       The Third and Final Continent
                     </p>
-                  </a>
+                  </p>
                 </div>
                 <p className="text-gray-700">
                   I had assumed Mrs. Croft was in her eighties, perhaps as old
@@ -568,32 +562,30 @@ function News() {
 
             {/* Article 4 */}
             <motion.div
-              className="grid py-8 sm:grid-cols-4"
+              className="grid py-8 sm:grid-cols-3"
               variants={fadeInUp}
             >
               <div className="mb-4 sm:mb-0">
                 <div className="space-y-1 text-xs font-semibold tracking-wide uppercase">
-                  <a
-                    href="/"
+                  <p
                     className="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
                     aria-label="Category"
                   >
                     Amitav Ghosh
-                  </a>
+                  </p>
                   <p className="text-gray-600">1 Sep 2020</p>
                 </div>
               </div>
               <div className="sm:col-span-3 lg:col-span-2">
                 <div className="mb-3">
-                  <a
-                    href="/"
+                  <p
                     aria-label="Article"
                     className="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
                   >
                     <p className="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl">
                       Ever Green – Saving Big Forests to Save the Planet
                     </p>
-                  </a>
+                  </p>
                 </div>
                 <p className="text-gray-700">
                   The world’s megaforests – in Siberia, Congo, North America and
@@ -607,7 +599,7 @@ function News() {
 
         {/* Connect With App Part */}
         <motion.div
-          className="container flex flex-col items-center px-4 mx-auto text-center"
+          className="container flex flex-col items-center px-4 mx-auto text-center mb-7"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
