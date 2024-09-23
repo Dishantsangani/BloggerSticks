@@ -118,8 +118,12 @@ function Space() {
         {/* Section2 */}
         <section className="py-14">
           <h1 className="mb-12 text-center font-sans text-5xl font-bold">
-          Latest  <span className="text-blue-500">Updates</span>
+            Explore the <span className="text-blue-500">Cosmos</span>
           </h1>
+          <p className="text-center text-lg">
+            Dive into a universe of information and insights about space,
+            science, and technology.
+          </p>
           {loading ? (
             <div className="flex justify-center items-center">
               <BeatLoader color={"#4299e1"} loading={loading} size={50} />
@@ -127,7 +131,7 @@ function Space() {
           ) : (
             <div className="mx-auto grid grid-cols-1 gap-5 p-5 sm:grid-cols-2 md:grid-cols-3 lg:gap-10 ">
               {sdata.map((item, index) => (
-                <div key={index} >
+                <div key={index}>
                   <article className="group bg-blue-50 h-full overflow-hidden rounded-lg border-2 border-gray-200 border-opacity-60 shadow-lg">
                     <img
                       className="w-full transform object-cover object-center transition duration-500 ease-in-out group-hover:scale-105 md:h-36 lg:h-48"

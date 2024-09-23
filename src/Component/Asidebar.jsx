@@ -153,7 +153,7 @@ function Asidebar() {
                 <span className="mx-2 text-sm font-medium">Trades</span>
               </Link>
 
-              {/*  */}
+              {/* space */}
               <Link
                 className="flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
                 to="/space"
@@ -175,8 +175,30 @@ function Asidebar() {
 
                 <span className="mx-2 text-sm font-medium">Space</span>
               </Link>
+              {/* Payment */}
+              <Link
+                className="flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+                to="/payment"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
+                  />
+                </svg>
+
+                <span className="mx-2 text-sm font-medium">Payment</span>
+              </Link>
               {/* Icon */}
-              <div className="flex items-center justify-between mt-32">
+              <div className="flex items-center justify-between mt-20">
                 <a href="#" className="flex items-center gap-x-2">
                   <img
                     className="object-cover rounded-full h-7 w-7"
