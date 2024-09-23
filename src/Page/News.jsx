@@ -87,7 +87,7 @@ function News() {
                 <HashLoader color={"#4299e1"} loading={true} size={150} />
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-8 mt-8 md:mt-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-8 mt-8 md:mt-6 md:grid-cols-2 lg:grid-cols-3 ">
                 {currentPosts.map((item, index) => (
                   <motion.div
                     key={index}
@@ -201,7 +201,7 @@ function News() {
         {/* Paggination */}
 
         {/* Article Part */}
-        <div className="px-4 py-16 mx-auto sm:max-w-xl sm:ml-2 md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="px-4 py-16 mx-auto sm:max-w-xl bg-indigo-200 rounded-lg sm:ml-2 md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="grid gap-10 row-gap-8 lg:grid-cols-5">
             <motion.div
               className="lg:col-span-2"
@@ -215,7 +215,6 @@ function News() {
               </p>
               <div className="mb-3">
                 <p
-                  href="/"
                   aria-label="Article"
                   className="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-400"
                 >
@@ -415,7 +414,7 @@ function News() {
         {/* Testimonal */}
 
         {/* Content Article */}
-        <div className="px-2 py-8 mx-auto sm:max-w-lg md:max-w-full lg:max-w-screen-xl md:px-8 lg:px-8 lg:py-20">
+        <div className="px-2 py-8 mx-auto mt-4 bg-purple-200 rounded-md sm:max-w-lg md:max-w-full lg:max-w-screen-xl md:px-8 lg:px-8 lg:py-20">
           <motion.div
             className="flex flex-col lg:flex-row"
             initial="hidden"
@@ -447,7 +446,7 @@ function News() {
         </div>
 
         {/* Article Part2 */}
-        <div className="py-8 mx-auto sm:max-w-xl  lg:max-w-screen-xl md:px-2 lg:px-8 lg:py-4">
+        <div className="py-8 mx-auto sm:max-w-xl   lg:max-w-screen-xl md:px-2 lg:px-8 lg:py-4">
           <motion.div
             className="mb-10 border-t border-b divide-y"
             initial="hidden"
@@ -599,7 +598,7 @@ function News() {
 
         {/* Connect With App Part */}
         <motion.div
-          className="container flex flex-col items-center px-4 mx-auto text-center mb-7"
+          className="container flex flex-col items-center px-4 mx-auto text-center mb-7 bg-green-200"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}

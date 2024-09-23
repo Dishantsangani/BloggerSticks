@@ -75,7 +75,7 @@ function Finance() {
         </section>
 
         {/*Section 1 With Image  */}
-        <section className="bg-white dark:bg-gray-900">
+        <section className=" dark:bg-gray-900">
           <motion.div
             className="container px-6 py-10 mx-auto"
             initial="hidden"
@@ -122,7 +122,7 @@ function Finance() {
                 </div>
               </motion.div>
               <motion.div
-                className="mt-8 lg:w-1/4 lg:mt-0 lg:px-6"
+                className="mt-8 lg:w-1/4 lg:mt-0 lg:px-6 bg-indigo-100 rounded-lg "
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -162,9 +162,17 @@ function Finance() {
                     six-month post-listing
                   </p>
                 </div>
+                <hr className="my-6 border-gray-200 dark:border-gray-700" />
+                <div>
+                  <p className="block mt-2 font-medium text-gray-700  hover:text-gray-500 dark:text-gray-400 ">
+                    American Airlines in talks to pick Citigroup over Barclays
+                    for crucial card deal: Sources
+                  </p>
+                </div>
               </motion.div>
             </div>
           </motion.div>
+          <hr className="my-6 border-gray-200 dark:border-gray-700" />
         </section>
 
         {/* API Response */}
@@ -192,7 +200,7 @@ function Finance() {
               </div>
             ) : (
               <motion.div
-                className="grid gap-4 lg:grid-cols-3"
+                className="grid gap-4 lg:grid-cols-3 "
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -201,10 +209,10 @@ function Finance() {
                 {currentPosts.map((item, index) => (
                   <article
                     key={index}
-                    className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                    className="p-6 bg-blue-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
                   >
-                    <div>
-                      <div className="flex justify-between items-center mb-5 text-gray-500">
+                    <div >
+                      <div className="flex justify-between items-center mb-5 text-gray-500 ">
                         <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
                           <svg
                             className="mr-1 w-3 h-3"
