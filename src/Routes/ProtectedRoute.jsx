@@ -29,7 +29,7 @@ function ProtectedRoute() {
           <Route path="/finance" element={<Finance />} />
           <Route path="/trades" element={<Trading />} />
           <Route path="/space" element={<Space />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/checkout" element={<Payment />} />
         </Routes>
       )}
       <Footer />
