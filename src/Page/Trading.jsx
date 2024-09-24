@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createChart } from "lightweight-charts";
 import { motion } from "framer-motion";
-
+import { SplitText } from "../Animations/SplitText";
+import Masonry from "../Animations/Masonry/Masonry";
 const Trading = () => {
   // Animation
   const fadeIn = {
@@ -81,7 +82,69 @@ const Trading = () => {
       }
     });
   }, []);
-
+  //
+  const data = [
+    {
+      id: 1,
+      image:
+        "https://img.freepik.com/free-vector/buy-sell-trend-forex-trading-background_1017-31712.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1726704000&semt=ais_hybrid",
+      height: 400,
+    },
+    {
+      id: 2,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1Bj7JzjysSk4x4QV2g3b1zorpDEQ6aXbEmTBJ9WB35JwIyHkmIUJkooJKl_HkKMGLWA&usqp=CAU",
+      height: 300,
+    },
+    {
+      id: 3,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHLgp3UFK48nI2RCyNRmyShMBs9qiu18JTqw&s",
+      height: 300,
+    },
+    {
+      id: 4,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB5J6vqHSv0FejuIaDARYyRPrzGq5KoO-6Aw&s",
+      height: 300,
+    },
+    {
+      id: 5,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfIcOyA_ZvBOojCYYsvEzzy5F0b1TkrC8vrA&s",
+      height: 300,
+    },
+    {
+      id: 6,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrJuoy7pBsrUt-1i_kigD8zqszUghSRADsoMa96a4UVNiT6nayGZ-6HRKz5mINNS4k03I&usqp=CAU",
+      height: 300,
+    },
+    {
+      id: 7,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTokRvlK2WclddsOyrlA3s4diQ1Db0tdUi5Q0873NAcH5lC3rqTDWKtObyvPc0q_vjLDxw&usqp=CAU",
+      height: 200,
+    },
+    {
+      id: 8,
+      image:
+        "https://blog.bettertrader.co/wp-content/uploads/2018/07/strateggy.png",
+      height: 300,
+    },
+    {
+      id: 9,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDRSU1f6P7giOqSq77I-CROAPWsZggQ4jhTOUnXb2XlrTvzlCX836hNayHHKb5Xk_UmoQ&usqp=CAU",
+      height: 200,
+    },
+    {
+      id: 10,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaw0a7uJtnAD_D0FhkFd6_wKuU1VCqpc3IwQ&s",
+      height: 400,
+    },
+  ];
   return (
     <>
       {/* Heading */}
@@ -93,8 +156,13 @@ const Trading = () => {
         variants={fadeIn}
       >
         <h2 className="mb-4 text-3xl lg:text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-          <span className="text-blue-500">Bloggerstricks </span>
+          <SplitText
+            text="Bloggerstricks"
+            className="custom-class"
+            delay={50}
+          />
           Your Ultimate Trading Platform
+          {/* <span className="text-blue-500">Bloggerstricks </span> */}
         </h2>
         <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
           Bloggerticks is a cutting-edge trading platform designed for both
@@ -129,9 +197,7 @@ const Trading = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="bg-red-500 p-4 rounded-lg drop-shadow-xl">
               <h3 className="text-lg font-bold text-white">Current Price</h3>
-              <p className="text-sm text-white">
-                ${tradingInfo.currentPrice}
-              </p>
+              <p className="text-sm text-white">${tradingInfo.currentPrice}</p>
             </div>
             <div className="bg-green-500 p-4 rounded-lg drop-shadow-xl">
               <h3 className="text-lg font-bold text-white">Volume</h3>
@@ -148,6 +214,7 @@ const Trading = () => {
           </div>
         </div>
       </motion.div>
+      <Masonry data={data} />
     </>
   );
 };

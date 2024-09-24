@@ -2,7 +2,12 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import HashLoader from "react-spinners/HashLoader";
+import ShinyText from "../Animations/ShinyText/ShinyText";
+import StarBorder from "../Animations/StarBorder/StarBorder";
+import { Navigate, useNavigate } from "react-router-dom";
+
 function News() {
+  const navigate = useNavigate();
   //  Animation
   const sectionVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -74,8 +79,13 @@ function News() {
           <div className="container px-4 py-4 mx-auto">
             <div className="text-center">
               <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
-                Your One-Stop for News and
-                <span className="text-blue-500"> Headlines</span>
+                <ShinyText
+                  text="Your One-Stop for News and"
+                  disabled={false}
+                  speed={3}
+                  className="custom-class"
+                />
+                <span className="text-"> Headlines</span>
               </h1>
               <p className="max-w-lg mx-auto mt-2 text-gray-500">
                 Bloggersticks: The Future of News and Headlines is Here
@@ -142,7 +152,6 @@ function News() {
           </div>
         </motion.section>
         {/* API Data */}
-
         {/* Paggination */}
         <div className="flex justify-center mb-4 mt-2">
           <motion.button
@@ -199,7 +208,6 @@ function News() {
           </motion.button>
         </div>
         {/* Paggination */}
-
         {/* Article Part */}
         <div className="px-4 py-16 mx-auto sm:max-w-xl bg-indigo-200 rounded-lg sm:ml-2 md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="grid gap-10 row-gap-8 lg:grid-cols-5">
@@ -354,9 +362,7 @@ function News() {
             </div>
           </div>
         </div>
-
         {/* Article Part */}
-
         {/* Testimonal */}
         <section className="bg-white dark:bg-gray-900">
           <motion.div
@@ -412,7 +418,6 @@ function News() {
           </motion.div>
         </section>
         {/* Testimonal */}
-
         {/* Content Article */}
         <div className="px-2 py-8 mx-auto mt-4 bg-purple-200 rounded-md sm:max-w-lg md:max-w-full lg:max-w-screen-xl md:px-8 lg:px-8 lg:py-20">
           <motion.div
@@ -444,7 +449,6 @@ function News() {
             </motion.div>
           </motion.div>
         </div>
-
         {/* Article Part2 */}
         <div className="py-8 mx-auto sm:max-w-xl   lg:max-w-screen-xl md:px-2 lg:px-8 lg:py-4">
           <motion.div
@@ -595,17 +599,16 @@ function News() {
             </motion.div>
           </motion.div>
         </div>
-
         {/* Connect With App Part */}
         <motion.div
-          className="container flex flex-col items-center px-4 mx-auto text-center mb-7 bg-green-200"
+          className="container rounded-lg flex flex-col items-center px-4 mx-auto text-center mb-7 bg-green-200"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeIn}
         >
           <motion.h2
-            className="text-2xl font-bold tracking-tight text-black xl:text-3xl dark:text-white"
+            className="text-2xl mt-5 font-bold tracking-tight text-black xl:text-3xl dark:text-white"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -632,54 +635,30 @@ function News() {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeIn}
           >
-            <a
-              href="#"
-              className="inline-flex items-center justify-center w-full px-4 py-2.5 overflow-hidden text-sm text-white transition-colors duration-300 bg-gray-900 rounded-lg shadow sm:w-auto sm:mx-2 hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80"
+            <StarBorder
+              as="button"
+              className="custom-class mb-4"
+              color="black"
+              speed="5s"
             >
-              <svg
-                className="w-5 h-5 mx-2 fill-current"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                x="0px"
-                y="0px"
-                viewBox="0 0 512 512"
-                xmlSpace="preserve"
-              >
-                <g>
-                  <g>
-                    <path d="M407,0H105C47.103,0,0,47.103,0,105v302c0,57.897,47.103,105,105,105h302c57.897,0,105-47.103,105-105V105C512,47.103,464.897,0,407,0z M482,407c0,41.355-33.645,75-75,75H105c-41.355,0-75-33.645-75-75V105c0-41.355,33.645-75,75-75h302c41.355,0,75,33.645,75,75V407z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M305.646,123.531c-1.729-6.45-5.865-11.842-11.648-15.18c-11.936-6.892-27.256-2.789-34.15,9.151L256,124.166l-3.848-6.665c-6.893-11.937-22.212-16.042-34.15-9.151h-0.001c-11.938,6.893-16.042,22.212-9.15,34.151l18.281,31.664L159.678,291H110.5c-13.785,0-25,11.215-25,25c0,13.785,11.215,25,25,25h189.86l-28.868-50h-54.079l85.735-148.498C306.487,136.719,307.375,129.981,305.646,123.531z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M401.5,291h-49.178l-55.907-96.834l-28.867,50l86.804,150.348c3.339,5.784,8.729,9.921,15.181,11.65c2.154,0.577,4.339,0.863,6.511,0.863c4.332,0,8.608-1.136,12.461-3.361c11.938-6.893,16.042-22.213,9.149-34.15L381.189,341H401.5c13.785,0,25-11.215,25-25C426.5,302.215,415.285,291,401.5,291z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M119.264,361l-4.917,8.516c-6.892,11.938-2.787,27.258,9.151,34.15c3.927,2.267,8.219,3.345,12.458,3.344c8.646,0,17.067-4.484,21.693-12.495L176.999,361H119.264z" />
-                  </g>
-                </g>
-              </svg>
-              <span className="mx-2">Get it on the App Store</span>
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center justify-center w-full px-4 py-2.5 mt-4 overflow-hidden text-sm text-white transition-colors duration-300 bg-blue-600 rounded-lg shadow sm:w-auto sm:mx-2 sm:mt-0 hover:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80"
-            >
-              <svg
-                className="w-5 h-5 mx-2 fill-current"
-                viewBox="-28 0 512 512.00075"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="m432.320312 215.121094-361.515624-208.722656c-14.777344-8.53125-32.421876-8.53125-47.203126 0-.121093.070312-.230468.148437-.351562.21875-.210938.125-.421875.253906-.628906.390624-14.175782 8.636719-22.621094 23.59375-22.621094 40.269532v417.445312c0 17.066406 8.824219 32.347656 23.601562 40.878906 7.390626 4.265626 15.496094 6.398438 23.601563 6.398438s16.214844-2.132812 23.601563-6.398438l361.519531-208.722656c14.777343-8.53125 23.601562-23.8125 23.601562-40.878906s-8.824219-32.347656-23.605469-40.878906zm-401.941406 253.152344c-.21875-1.097657-.351562-2.273438-.351562-3.550782v-417.445312c0-2.246094.378906-4.203125.984375-5.90625l204.324219 213.121094zm43.824219-425.242188 234.21875 135.226562-52.285156 54.539063zm-6.480469 429.679688 188.410156-196.527344 54.152344 56.484375zm349.585938-201.835938-80.25 46.332031-60.125-62.714843 58.261718-60.773438 82.113282 47.40625c7.75 4.476562 8.589844 11.894531 8.589844 14.875s-.839844 10.398438-8.589844 14.875zm0 0"></path>
-              </svg>
-              <span className="mx-2">Get it on Google Play</span>
-            </a>
+              <button className="flex" onClick={() => navigate("/community")}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-6 me-2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+                  />
+                </svg>
+                Join our community
+              </button>
+            </StarBorder>
           </motion.div>
         </motion.div>
       </div>

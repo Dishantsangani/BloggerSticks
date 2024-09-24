@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
+import GradientText from "../Animations/GradientText/GradientText";
 import FadeLoader from "react-spinners/FadeLoader";
+import { SplitText } from "../Animations/SplitText";
 
 function Finance() {
   // Animation
-
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -61,10 +61,18 @@ function Finance() {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeIn}
           >
-            <h2 className="max-w-2xl mx-auto text-2xl font-semibold tracking-tight text-gray-800 xl:text-3xl dark:text-white">
+            <GradientText
+              colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]} // Custom gradient colors
+              animationSpeed={3} // Custom animation speed in seconds
+              showBorder={false} // Show or hide border
+              className="custom-class max-w-2xl mx-auto text-2xl font-semibold tracking-tight text-gray-800 xl:text-3xl" // Add one or more custom classes
+            >
+              Expert guidance to make informed financial decisions.
+            </GradientText>
+            {/* <h2 className="max-w-2xl mx-auto text-2xl font-semibold tracking-tight text-gray-800 xl:text-3xl dark:text-white">
               Expert guidance to make informed
               <span className="text-blue-500"> financial decisions.</span>
-            </h2>
+            </h2> */}
             <p className="max-w-4xl mt-6 text-center text-gray-500 dark:text-gray-300">
               Bloggerstricks is a dedicated platform designed to provide
               comprehensive insights into financial reporting. Whether you're a
@@ -186,8 +194,13 @@ function Finance() {
           >
             <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
               <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                Latest
-                <span className="text-blue-500"> Updates</span>
+                <SplitText
+                  text="Latest Updates!"
+                  className="custom-class mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold "
+                  delay={50}
+                />
+                {/* Latest
+                <span className="text-blue-500"> Updates</span> */}
               </h2>
               <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
                 Stay informed about the latest trends and regulations in
@@ -211,7 +224,7 @@ function Finance() {
                     key={index}
                     className="p-6 bg-blue-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
                   >
-                    <div >
+                    <div>
                       <div className="flex justify-between items-center mb-5 text-gray-500 ">
                         <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
                           <svg

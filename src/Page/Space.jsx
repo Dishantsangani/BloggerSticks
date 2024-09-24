@@ -2,8 +2,9 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { BlurText } from "../Animations/BlurText";
 import BeatLoader from "react-spinners/BeatLoader";
-
+import { SplitText } from "../Animations/SplitText";
 function Space() {
   // Animation
   const fadeIn = {
@@ -32,7 +33,7 @@ function Space() {
     <>
       <div>
         {/*  */}
-        <section className="bg-indigo-100 dark:bg-gray-900">
+        <section className="bg-white dark:bg-gray-900">
           <motion.div
             className="container px-6 py-16 mx-auto text-center"
             initial="hidden"
@@ -42,9 +43,14 @@ function Space() {
           >
             <div className="max-w-lg mx-auto">
               <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
-                Explore the{" "}
+                <BlurText
+                  text="Explore the universe of space news and trading insights."
+                  className="custom-class text-3xl"
+                  delay={50}
+                />
+                {/* Explore the
                 <span className="text-blue-500"> universe of space</span> news
-                and trading insights.
+                and trading insights. */}
               </h1>
               <p className="mt-6 text-gray-500 dark:text-gray-300">
                 Dive into engaging articles that cover the latest developments
@@ -60,7 +66,6 @@ function Space() {
             </div>
           </motion.div>
         </section>
-
         {/*  */}
         <hr className="h-px my-2 bg-black border-0 dark:bg-gray-700" />
         {/* Section 1 */}
@@ -114,11 +119,11 @@ function Space() {
             </main>
           </motion.div>
         </section>
-
         {/* Section2 */}
         <section className="py-14">
           <h1 className="mb-12 text-center font-sans text-5xl font-bold">
-            Explore the <span className="text-blue-500">Cosmos</span>
+            Explore the {""}
+            <SplitText text="Cosmos" className="custom-class" delay={50} />
           </h1>
           <p className="text-center text-lg">
             Dive into a universe of information and insights about space,
