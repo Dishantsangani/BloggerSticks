@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import HashLoader from "react-spinners/HashLoader";
 import ShinyText from "../Animations/ShinyText/ShinyText";
 import StarBorder from "../Animations/StarBorder/StarBorder";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function News() {
   const navigate = useNavigate();
@@ -641,7 +642,13 @@ function News() {
               color="black"
               speed="5s"
             >
-              <button className="flex" onClick={() => navigate("/community")}>
+              <button
+                className="flex"
+                onClick={() => {
+                  navigate("/community");
+                  toast("Thanks You For Join Community 😊");
+                }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

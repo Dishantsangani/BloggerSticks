@@ -4,19 +4,23 @@ import TiltedScroll from "../Animations/TiltedScroll/TiltedScroll";
 
 import React from "react";
 import axios from "axios";
+import { useEffect } from "react";
 
 function Payment() {
   const handlesubmit = async () => {
-    try {
-      let response = await axios.post("http://localhost:3000/payment");
+    useEffect(() => {
+      axios.post("https://bloggerstricks-backend.onrender.com/");
+    }, []);
+    // try {
+    //   let response = await axios.post("http://localhost:3000/payment");
 
-      if (response && response.status === 200) {
-        // Redirect to the Stripe checkout page
-        window.location.href = response.data.url;
-      }
-    } catch (error) {
-      console.error("Error processing payment:", error);
-    }
+    //   if (response && response.status === 200) {
+    //     // Redirect to the Stripe checkout page
+    //     window.location.href = response.data.url;
+    //   }
+    // } catch (error) {
+    //   console.error("Error processing payment:", error);
+    // }
   };
 
   return (

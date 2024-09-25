@@ -29,7 +29,7 @@ function Asidebar() {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6 ml-28"
+              className="w-6 h-6 ml-32 mt-1"
             >
               <path
                 strokeLinecap="round"
@@ -60,13 +60,21 @@ function Asidebar() {
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <img src="logo.png" alt="" className="w-72 mt-8" />
+          <img
+            src="logo.png"
+            alt="logo"
+            onClick={() => navigate("/home")}
+            className="w-72 mt-8 cursor-pointer"
+          />
+
           <div className="flex flex-col justify-between flex-1 mt-">
             <hr />
             <nav className="flex flex-col justify-between flex-1 mt-6">
               {/* Home */}
               <Link
-                className="flex items-center mt-5  px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+                className={`flex items-center mt-5  px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 ${
+                  location.pathname === "/home" ? "bg-blue-500 text-white" : ""
+                }`}
                 to="/home"
               >
                 <svg
@@ -87,7 +95,9 @@ function Asidebar() {
 
               {/* News */}
               <Link
-                className="flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+                className={`flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 ${
+                  location.pathname === "/news" ? "bg-blue-500 text-white" : ""
+                }`}
                 to="/news"
               >
                 <svg
@@ -110,7 +120,11 @@ function Asidebar() {
 
               {/* Finance */}
               <Link
-                className="flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+                className={`flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700  ${
+                  location.pathname === "/finance"
+                    ? "bg-blue-500 text-white"
+                    : ""
+                }`}
                 to="/finance"
               >
                 <svg
@@ -132,7 +146,11 @@ function Asidebar() {
 
               {/* Trades */}
               <Link
-                className="flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+                className={`flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 ${
+                  location.pathname === "/trades"
+                    ? "bg-blue-500 text-white"
+                    : ""
+                } `}
                 to="/trades"
               >
                 <svg
@@ -155,7 +173,9 @@ function Asidebar() {
 
               {/* space */}
               <Link
-                className="flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+                className={`flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 ${
+                  location.pathname === "/space" ? "bg-blue-500 text-white" : ""
+                }`}
                 to="/space"
               >
                 <svg
@@ -177,7 +197,11 @@ function Asidebar() {
               </Link>
               {/* Payment */}
               <Link
-                className="flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+                className={`flex items-center mt-5 px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 ${
+                  location.pathname === "/checkout"
+                    ? "bg-blue-500 text-white"
+                    : ""
+                }`}
                 to="/checkout"
               >
                 <svg

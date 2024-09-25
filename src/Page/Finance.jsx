@@ -186,7 +186,7 @@ function Finance() {
         {/* API Response */}
         <section className="bg-white dark:bg-gray-900">
           <motion.div
-            className="py-4 px-4 mx-auto max-w- lg:py-8 lg:px-4"
+            className="py-4 px-4 mx-auto max-w-full lg:max-w-screen-lg lg:py-8 lg:px-4"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -196,24 +196,23 @@ function Finance() {
               <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 <SplitText
                   text="Latest Updates!"
-                  className="custom-class mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold "
+                  className="custom-class mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold"
                   delay={50}
                 />
-                {/* Latest
-                <span className="text-blue-500"> Updates</span> */}
               </h2>
               <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
                 Stay informed about the latest trends and regulations in
                 financial reporting.
               </p>
             </div>
+
             {loading ? (
               <div className="flex justify-center items-center">
                 <FadeLoader color={"#4299e1"} loading={true} size={50} />
               </div>
             ) : (
               <motion.div
-                className="grid gap-4 lg:grid-cols-3 "
+                className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -225,7 +224,7 @@ function Finance() {
                     className="p-6 bg-blue-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
                   >
                     <div>
-                      <div className="flex justify-between items-center mb-5 text-gray-500 ">
+                      <div className="flex justify-between items-center mb-5 text-gray-500">
                         <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
                           <svg
                             className="mr-1 w-3 h-3"
@@ -246,11 +245,9 @@ function Finance() {
                         {item.summary}
                       </p>
                       <div className="flex justify-between items-center">
-                        <div className="flex items-center space-x-4">
-                          <span className="font-medium text-blue-500">
-                            {item.source}
-                          </span>
-                        </div>
+                        <span className="font-medium text-blue-500">
+                          {item.source}
+                        </span>
                         <a
                           className="inline-flex items-center font-medium text-blue-500 dark:text-primary-500 hover:underline"
                           href={item.url}
@@ -276,7 +273,7 @@ function Finance() {
                 ))}
               </motion.div>
             )}
-            {/* Prev Next Button */}
+
             <div className="flex justify-center mb-4 mt-10">
               <motion.button
                 onClick={() => handlepagechange(currentPage - 1)}
