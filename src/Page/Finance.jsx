@@ -36,6 +36,7 @@ function Finance() {
       })
       .catch((err) => {
         console.log("This is a API Erorr", err);
+        setLoading(false);
       });
   }, []);
   const lastPostIndex = currentPage * postperpage;
@@ -58,7 +59,7 @@ function Finance() {
             className="container flex flex-col items-center mt-7 px-4 mx-auto text-center"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={fadeIn}
           >
             <GradientText
@@ -88,7 +89,7 @@ function Finance() {
             className="container px-6 py-10 mx-auto"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={fadeIn}
           >
             <div className="lg:flex lg:-mx-6">
@@ -96,7 +97,7 @@ function Finance() {
                 className="lg:w-3/4 lg:px-6"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.1 }}
                 variants={fadeIn}
               >
                 <img
@@ -133,7 +134,7 @@ function Finance() {
                 className="mt-8 lg:w-1/4 lg:mt-0 lg:px-6 bg-indigo-100 rounded-lg "
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.1 }}
                 variants={fadeIn}
               >
                 <div>
@@ -186,21 +187,21 @@ function Finance() {
         {/* API Response */}
         <section className="bg-white dark:bg-gray-900">
           <motion.div
-            className="py-4 px-4 mx-auto max-w-full lg:max-w-screen-lg lg:py-8 lg:px-4"
+            className="py-4 px-2 mx-auto max-w-full lg:max-w-screen-lg lg:py-8 lg:px-4"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
             variants={fadeIn}
           >
             <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-              <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              <h2 className="mb-4 text-2xl sm:text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 <SplitText
                   text="Latest Updates!"
-                  className="custom-class mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold"
+                  className="custom-class"
                   delay={50}
                 />
               </h2>
-              <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+              <p className="font-light text-sm sm:text-lg text-gray-500 dark:text-gray-400">
                 Stay informed about the latest trends and regulations in
                 financial reporting.
               </p>
@@ -215,16 +216,16 @@ function Finance() {
                 className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.1 }}
                 variants={fadeIn}
               >
                 {currentPosts.map((item, index) => (
                   <article
                     key={index}
-                    className="p-6 bg-blue-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                    className="p-4 sm:p-6 bg-blue-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
                   >
                     <div>
-                      <div className="flex justify-between items-center mb-5 text-gray-500">
+                      <div className="flex justify-between items-center mb-4 text-gray-500">
                         <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
                           <svg
                             className="mr-1 w-3 h-3"
@@ -236,12 +237,14 @@ function Finance() {
                           </svg>
                           {item.category}
                         </span>
-                        <span className="text-sm">{item.datetime}</span>
+                        <span className="text-xs sm:text-sm">
+                          {item.datetime}
+                        </span>
                       </div>
-                      <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      <h2 className="mb-2 text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                         {item.headline}
                       </h2>
-                      <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
+                      <p className="mb-4 text-sm sm:text-base font-light text-gray-500 dark:text-gray-400">
                         {item.summary}
                       </p>
                       <div className="flex justify-between items-center">
@@ -249,7 +252,7 @@ function Finance() {
                           {item.source}
                         </span>
                         <a
-                          className="inline-flex items-center font-medium text-blue-500 dark:text-primary-500 hover:underline"
+                          className="inline-flex items-center text-sm sm:text-base font-medium text-blue-500 dark:text-primary-500 hover:underline"
                           href={item.url}
                           target="_blank"
                         >
@@ -273,12 +276,17 @@ function Finance() {
                 ))}
               </motion.div>
             )}
+            {currentPosts.length === 0 && !loading && (
+              <div className="text-center text-gray-500">
+                No content available at the moment.
+              </div>
+            )}
 
             <div className="flex justify-center mb-4 mt-10">
               <motion.button
                 onClick={() => handlepagechange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="bg-gray-800 text-white rounded-l-md border-r border-gray-100 py-2 hover:bg-gray-900 hover:text-white px-3"
+                className="bg-gray-800 text-white rounded-l-md py-2 px-3 hover:bg-gray-900"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -306,7 +314,7 @@ function Finance() {
                   fdata.slice(lastPostIndex, lastPostIndex + postperpage)
                     .length === 0
                 }
-                className="bg-blue-600 text-white rounded-r-md py-2 border-l border-gray-200 hover:bg-blue-500 hover:text-white px-3"
+                className="bg-blue-600 text-white rounded-r-md py-2 px-3 hover:bg-blue-500"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
