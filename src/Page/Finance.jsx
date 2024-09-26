@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import GradientText from "../Animations/GradientText/GradientText";
 import FadeLoader from "react-spinners/FadeLoader";
 import { SplitText } from "../Animations/SplitText";
+import { BlurText } from "../Animations/BlurText";
 
 function Finance() {
   // Animation
@@ -26,9 +27,9 @@ function Finance() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(
-        "https://finnhub.io/api/v1/news?category=general&token=crhe2j1r01qjv9rkl3e0crhe2j1r01qjv9rkl3eg"
-      )
+      .get
+      // "https://finnhub.io/api/v1/news?category=general&token=crhe2j1r01qjv9rkl3e0crhe2j1r01qjv9rkl3eg"
+      ()
       .then((res) => {
         setFdata(res.data);
         setTotalPosts(res.data.length);
@@ -56,7 +57,7 @@ function Finance() {
         {/* Header */}
         <section className="bg-white dark:bg-gray-900">
           <motion.div
-            className="container flex flex-col items-center mt-7 px-4 mx-auto text-center"
+            className="container flex flex-col items-center mt-10 px-4 mx-auto text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
@@ -66,7 +67,7 @@ function Finance() {
               colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]} // Custom gradient colors
               animationSpeed={3} // Custom animation speed in seconds
               showBorder={false} // Show or hide border
-              className="custom-class max-w-2xl mx-auto text-2xl font-semibold tracking-tight text-gray-800 xl:text-3xl" // Add one or more custom classes
+              className="custom-class max-w-2xl mx-auto text-2xl font-semibold tracking-tight text-gray-800 xl:text-4xl" // Add one or more custom classes
             >
               Expert guidance to make informed financial decisions.
             </GradientText>
@@ -181,39 +182,42 @@ function Finance() {
               </motion.div>
             </div>
           </motion.div>
-          <hr className="my-6 border-gray-200 dark:border-gray-700" />
+          {/* <hr className="my-6 border-gray-200 dark:border-gray-700" /> */}
         </section>
+
+        {/* Update */}
+        <div className="mx-auto my-6 pt-3 pb-3 drop-shadow-lg max-w-screen-sm rounded-lg bg-indigo-100 text-center lg:mb-8 mb-6">
+          <h2 className="mb-2 text-xl sm:text-2xl lg:text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+            <SplitText
+              text="Latest Updates !"
+              className="custom-class"
+              delay={50}
+            />
+          </h2>
+          <BlurText
+            text="Stay informed about the latest trends and regulations in financial reporting."
+            className="custom-class max-w-lg mx-auto mt-2 text-black text-xl "
+            delay={40}
+          />
+          <p className="font-light text-sm sm:text-base text-gray-500 dark:text-gray-400"></p>
+        </div>
 
         {/* API Response */}
         <section className="bg-white dark:bg-gray-900">
           <motion.div
-            className="py-4 px-2 mx-auto max-w-full lg:max-w-screen-lg lg:py-8 lg:px-4"
+            className="py-2 px-2 mx-auto max-w-full lg:max-w-screen-lg lg:py-4 lg:px-0" // Change lg:px-0
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
             variants={fadeIn}
           >
-            <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-              <h2 className="mb-4 text-2xl sm:text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                <SplitText
-                  text="Latest Updates!"
-                  className="custom-class"
-                  delay={50}
-                />
-              </h2>
-              <p className="font-light text-sm sm:text-lg text-gray-500 dark:text-gray-400">
-                Stay informed about the latest trends and regulations in
-                financial reporting.
-              </p>
-            </div>
-
             {loading ? (
               <div className="flex justify-center items-center">
                 <FadeLoader color={"#4299e1"} loading={true} size={50} />
               </div>
             ) : (
               <motion.div
-                className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                className=""
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.1 }}
@@ -222,11 +226,11 @@ function Finance() {
                 {currentPosts.map((item, index) => (
                   <article
                     key={index}
-                    className="p-4 sm:p-6 bg-blue-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                    className="p-2 mb-4 sm:p-4 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700"
                   >
                     <div>
-                      <div className="flex justify-between items-center mb-4 text-gray-500">
-                        <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                      <div className="flex justify-between items-center mb-2 text-gray-500">
+                        <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
                           <svg
                             className="mr-1 w-3 h-3"
                             fill="currentColor"
@@ -241,10 +245,10 @@ function Finance() {
                           {item.datetime}
                         </span>
                       </div>
-                      <h2 className="mb-2 text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      <h2 className="mb-1 text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                         {item.headline}
                       </h2>
-                      <p className="mb-4 text-sm sm:text-base font-light text-gray-500 dark:text-gray-400">
+                      <p className="mb-2 text-sm sm:text-base font-light text-gray-500 dark:text-gray-400">
                         {item.summary}
                       </p>
                       <div className="flex justify-between items-center">
@@ -282,7 +286,7 @@ function Finance() {
               </div>
             )}
 
-            <div className="flex justify-center mb-4 mt-10">
+            <div className="flex justify-center mb-4 mt-8">
               <motion.button
                 onClick={() => handlepagechange(currentPage - 1)}
                 disabled={currentPage === 1}

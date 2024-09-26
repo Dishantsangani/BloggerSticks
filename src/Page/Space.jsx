@@ -11,7 +11,6 @@ function Space() {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
-
   const [sdata, setSdata] = useState([]);
   const [loading, setLoading] = useState(false);
   //   API Calling
@@ -48,11 +47,8 @@ function Space() {
                   className="custom-class text-3xl"
                   delay={50}
                 />
-                {/* Explore the
-                <span className="text-blue-500"> universe of space</span> news
-                and trading insights. */}
               </h1>
-              <p className="mt-6 text-gray-500 dark:text-gray-300">
+              <p className="mt-6 text-gray-800 dark:text-gray-300">
                 Dive into engaging articles that cover the latest developments
                 in space exploration, satellite technology, and astronomical
                 discoveries
@@ -66,8 +62,44 @@ function Space() {
             </div>
           </motion.div>
         </section>
-        {/*  */}
-        <hr className="h-px my-2 bg-black border-0 dark:bg-gray-700" />
+
+        {/*Content*/}
+        <div className="px-5 flex text-center">
+          <div className="px-2 sm:px-4 md:px-8 py-8 mx-auto mt-5 mb-5 rounded-xl drop-shadow-xl bg-[#799cc7] sm:max-w-lg md:max-w-full lg:max-w-screen-xl lg:py-20">
+            <motion.div
+              className="flex flex-col lg:flex-row"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeIn}
+            >
+              <motion.div
+                className="lg:w-1/2 lg:pr-5 mb-4 lg:mb-0"
+                variants={fadeIn}
+              >
+                <h2 className="font-sans text-3xl font-bold tracking-tight text-black sm:text-4xl sm:leading-none">
+                  Astronauts may need
+                  <br className="hidden md:block" />
+                  medical evacuation from
+                  <span className="inline-block text-deep-purple-accent-400">
+                    one-third of moon missions
+                  </span>
+                </h2>
+              </motion.div>
+              <motion.div className="lg:w-1/2" variants={fadeIn}>
+                <p className="text-lg font-medium text-gray-900">
+                  One in three missions to the moon is at risk of requiring an
+                  astronaut to be medically evacuated back to Earth. This
+                  process would be difficult and costly – a medical emergency in
+                  space is an altogether tougher situation than one on Earth –
+                  but a new tool to calculate the probability of such crises
+                  could help us prevent them.
+                </p>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+
         {/* Section 1 */}
         <section className="bg-white dark:bg-gray-900">
           <motion.div
@@ -79,7 +111,7 @@ function Space() {
           >
             <main className="relative z-20 w-full mt-8 md:flex md:items-center xl:mt-12">
               <motion.div
-                className="absolute w-full bg-blue-600 -z-10 md:h-96 rounded-2xl"
+                className="absolute w-full bg-blue-500 -z-10 md:h-96 rounded-2xl"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -96,7 +128,6 @@ function Space() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
-                  variants={fadeIn}
                 >
                   <div>
                     <p className="text-xl font-medium tracking-tight text-white">
@@ -119,16 +150,23 @@ function Space() {
             </main>
           </motion.div>
         </section>
+
         {/* Section2 */}
-        <section className="py-14">
-          <h1 className="mb-12 text-center font-sans text-5xl font-bold">
-            Explore the {""}
-            <SplitText text="Cosmos" className="custom-class" delay={50} />
-          </h1>
-          <p className="text-center text-lg">
-            Dive into a universe of information and insights about space,
-            science, and technology.
-          </p>
+        <section className="py-2 px-3">
+          {/* Title */}
+          <div className="mx-auto my-6 pt-3 pb-3 drop-shadow-lg max-w-screen-sm rounded-lg bg-blue-200 text-center lg:mb-8 mb-6">
+            <h2 className="mb-2 text-xl sm:text-2xl lg:text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              Explore the {""}
+              <SplitText text="Cosmos !" className="custom-class" delay={50} />
+            </h2>
+            <BlurText
+              text="Dive into a universe of information and insights about space, science, and technology."
+              className="custom-class max-w-lg mx-auto mt-2 text-black text-xl "
+              delay={40}
+            />
+            <p className="font-light text-sm sm:text-base text-gray-500 dark:text-gray-400"></p>
+          </div>
+
           {loading ? (
             <div className="flex justify-center items-center">
               <BeatLoader color={"#4299e1"} loading={loading} size={50} />
@@ -153,8 +191,11 @@ function Space() {
                       >
                         {item.title.substring(0, 20)} ...
                       </h1>
-                      <p className="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500">
-                        {item.summary}
+                      <p
+                        title={item.summary}
+                        className="line-clamp-6 mb-3 cursor-pointer overflow-hidden leading-relaxed text-gray-500  product-desc"
+                      >
+                        {item.summary.substring(0, 45)} ...
                       </p>
                     </div>
                     <div className="flex flex-wrap items-center justify-between px-6 pt-1 pb-4">

@@ -77,7 +77,13 @@ function Signin() {
         </div>
         <form className="mt-4" onSubmit={handlesubmit}>
           <div>
-            <p className="text-center">Welcome to Bloggersticker</p>
+            <div className="flex items-center justify-between mt-4">
+              <span className="w-1/5 border-b dark:border-gray-600" />
+              <p className="text-sm text-center text-gray-800 uppercase dark:text-gray-400 hover:underline">
+                Welcome To BloggerStricks
+              </p>
+              <span className="w-1/5 border-b dark:border-gray-400" />
+            </div>
             <label
               htmlFor="Email"
               className="block text-sm text-gray-800 dark:text-gray-200"
@@ -124,16 +130,6 @@ function Signin() {
             </button>
           </div>
         </form>
-        <div className="flex items-center justify-between mt-4">
-          <span className="w-1/5 border-b dark:border-gray-600" />
-          <p
-            href="#"
-            className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
-          >
-            Welcome To BloggerStricks
-          </p>
-          <span className="w-1/5 border-b dark:border-gray-400" />
-        </div>
       </div>
     </>
   );
