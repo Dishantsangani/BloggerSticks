@@ -1,5 +1,5 @@
 const CACHE_NAME = "BloggerStricks-v1";
-const CACHE_URLS = ["/", "/index.html", "/manifest.json", "/favicon.png"];
+const CACHE_URLS = ["/", "/index.html"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

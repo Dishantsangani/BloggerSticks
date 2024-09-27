@@ -12,15 +12,16 @@
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-          .register("serviceWorker.js")
+          .register("/serviceWorker.js") // Note: path starts with "/"
           .then(() => {
-            console.log("Registed");
+            console.log("Service Worker Registered");
           })
           .catch(() => {
-            console.log("Error ServiceWoker");
+            console.log("Error Registering Service Worker");
           });
       }
     </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
   </body>
