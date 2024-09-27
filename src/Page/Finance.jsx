@@ -27,9 +27,9 @@ function Finance() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get
-      // "https://finnhub.io/api/v1/news?category=general&token=crhe2j1r01qjv9rkl3e0crhe2j1r01qjv9rkl3eg"
-      ()
+      .get(
+        "https://finnhub.io/api/v1/news?category=general&token=crhe2j1r01qjv9rkl3e0crhe2j1r01qjv9rkl3eg"
+      )
       .then((res) => {
         setFdata(res.data);
         setTotalPosts(res.data.length);
@@ -43,9 +43,7 @@ function Finance() {
   const lastPostIndex = currentPage * postperpage;
   const firstPostIndex = lastPostIndex - postperpage;
   const currentPosts = fdata.slice(firstPostIndex, lastPostIndex);
-
   const totalPages = Math.ceil(totalPosts / postperpage);
-
   const handlepagechange = (pageNumber) => {
     if (pageNumber > 0 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
@@ -120,7 +118,7 @@ function Finance() {
                       src="knagar.png"
                       alt=""
                     />
-                    <div className="mx-4">
+                    <div className="mx-4 ">
                       <h1 className="text-sm text-gray-700 dark:text-gray-200">
                         K.SheeraSagar
                       </h1>
@@ -182,7 +180,6 @@ function Finance() {
               </motion.div>
             </div>
           </motion.div>
-          {/* <hr className="my-6 border-gray-200 dark:border-gray-700" /> */}
         </section>
 
         {/* Update */}

@@ -253,7 +253,7 @@ function News() {
         </section>
 
         {/* Content Article */}
-        <div className="px-2 py-8 mx-auto mt-5 mb-5 drop-shadow-lg bg-purple-200 rounded- sm:max-w-lg md:max-w-full lg:max-w-screen-xl md:px-8 lg:px-8 lg:py-20">
+        <div className="px-2 py-8 mx-auto mt-5 mb-5 drop-shadow-lg bg-purple-200 rounded-lg sm:max-w-lg md:max-w-full lg:max-w-screen-xl md:px-8 lg:px-8 lg:py-20">
           <motion.div
             className="flex flex-col lg:flex-row"
             initial="hidden"
@@ -301,12 +301,12 @@ function News() {
               <div className="mb-4 sm:mb-0">
                 <div className="space-y-1 text-xs font-semibold tracking-wide uppercase">
                   <p
-                    className="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+                    className="  transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
                     aria-label="Category"
                   >
                     Aditya Sinha
                   </p>
-                  <p className="text-gray-600">5 Jan 2020</p>
+                  <p className="text-blue-500">5 Jan 2020</p>
                 </div>
               </div>
               <div className="sm:col-span-3 lg:col-span-2">
@@ -341,7 +341,7 @@ function News() {
                   >
                     Arundhati Roy
                   </p>
-                  <p className="text-gray-600">15 Sep 2020</p>
+                  <p className="text-blue-500">15 Sep 2020</p>
                 </div>
               </div>
               <div className="sm:col-span-3 lg:col-span-2">
@@ -376,7 +376,7 @@ function News() {
                   >
                     Jhumpa Lahiri
                   </p>
-                  <p className="text-gray-600">28 Dec 2020</p>
+                  <p className="text-blue-500">28 Dec 2020</p>
                 </div>
               </div>
               <div className="sm:col-span-3 lg:col-span-2">
@@ -411,7 +411,7 @@ function News() {
                   >
                     Amitav Ghosh
                   </p>
-                  <p className="text-gray-600">1 Sep 2020</p>
+                  <p className="text-blue-500">1 Sep 2020</p>
                 </div>
               </div>
               <div className="sm:col-span-3 lg:col-span-2">
